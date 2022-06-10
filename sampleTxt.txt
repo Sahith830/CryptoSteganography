@@ -1,0 +1,54 @@
+The word Steganography is derived from two Greek words- ‘stegos’ meaning ‘to cover’ and ‘grayfia’, meaning ‘writing’, thus translating to ‘covered writing’, or ‘hidden writing’. Steganography is a method of hiding secret data, by embedding it into an audio, video, image, or text file. It is one of the methods employed to protect secret or sensitive data from malicious attacks. 
+
+How is it different from cryptography? 
+Cryptography and steganography are both methods used to hide or protect secret data. However, they differ in the respect that cryptography makes the data unreadable, or hides the meaning of the data, while steganography hides the existence of the data. 
+
+In layman’s terms, cryptography is similar to writing a letter in a secret language: people can read it, but won’t understand what it means. However, the existence of a (probably secret) message would be obvious to anyone who sees the letter, and if someone either knows or figures out your secret language, then your message can easily be read. 
+
+If you were to use steganography in the same situation, you would hide the letter inside a pair of socks that you would be gifting the intended recipient of the letter. To those who don’t know about the message, it would look like there was nothing more to your gift than the socks. But the intended recipient knows what to look for, and finds the message hidden in them. 
+
+Similarly, if two users exchanged media files over the internet, it would be more difficult to determine whether these files contain hidden messages than if they were communicating using cryptography. 
+
+Cryptography is often used to supplement the security offered by steganography. Cryptography algorithms are used to encrypt secret data before embedding it into cover files. 
+What is Steganography?
+
+Steganography is the study and practice of concealing information within objects in such a way that it deceives the viewer as if there is no information hidden within the object. Simply put, it is hiding information in plain sight, such that only the intended recipient would get to see it. 
+How is this different from cryptography?
+
+It may immediately occur to us that this is similar to cryptography, but it is not so. In cryptography, the objective is to modify the original message in such a fashion it becomes difficult to get to the original message from the modified message. The original and modified messages are explicitly expected to look different. While in image steganography, the objective is to deceptively hide a message within another original message and thereby, modifying it. The modified message is expected to look very similar to the original message. 
+
+Let’s consider a scenario where two employees are expected to exchange official messages via email. In this case, we know that they will exchange messages, and hence, there is no need for them to hide those messages. However, as those messages might contain sensitive information, they might want to encrypt-decrypt it using cryptography. On the contrary, consider information exchange between a spy, operating undercover in the opponents’ military regiment and his parent organization, with whom he wants to share important information. In this case, the officers would be monitoring pretty much everything that goes in and out of his room. Hence, if he resorts to using cryptography to share encrypted information, officers might get suspicious. In such a situation, he might prefer image steganography, where he would deceptively hide a message within another object/message, without raising suspicions, and find a way to drop it off to his recipient. In summary, cryptography hides the meaning of the data, while steganography hides the existence of the data. Although they are different techniques, they might as well be used in combination, in the same instance, to get the best of both worlds. 
+
+Also Read: What is Image Recognition? How is it used?
+Incidents from history
+
+Steganography has been with us for ages, be it the spies in the Revolutionary War writing in invisible ink or Da Vinci embedding a secret meaning in a painting. Steganography traces its roots back to 500 BC. The first physical case of steganography is found in Histories by Herodotus, where he talks about the Greek leader Histiaeus’ act.  Histiaeus was stuck in an enemy camp and was in dire need of sending a message to his camp. He then resorted to shaving a trusted slave’s head, tattooing a secret message on his scalp, letting his hair grow, and then sending him off to be shaved again by the message’s recipient
+
+On the other end of the timeline, steganography is also being used recently. It is expected to be in use in the forthcoming years. For example, it was used very recently to drop malware into user’s computers, by sending them innocent-looking messages but hiding the malware within, using steganography techniques.
+Use cases or applications of steganography
+
+Although the prime objective is to share messages or information discreetly, it has found varied fields of applications such as 
+
+    Hackers using steganography techniques for malware transmission
+    Intelligence agencies use them for communication.
+    Printers also use micro-dots as a steganography tool to embed timestamps and date information within the document. Also, the same technique is used in bank-note printing, to prevent colour copiers from reproducing images of currency as fake-notes. 
+
+Types of steganography techniques
+
+There are several types and forms of steganography, and in the sections below, we’ll explore a few interesting and commonly used ones. Broadly steganography techniques could be classified into 
+
+    Physical: One that does not involve the use of digital mediums or files. Examples of such techniques include
+        Passing messages written with invisible ink, which can then be read by the intended recipient by applying certain chemical techniques
+         By using ciphering techniques to hide information within textual information. Here is an example of a null cypher technique used by a prisoner to convey a secret message to his outfit, which was intercepted and decoded by the FBI. See graphic below, which looks like an ordinary letter, however, when one looks at every fifth word (highlighted in red) it reveals a plot to murder someone i.e, refer to the last few red words “IF GUILTY OF WRITEUP, HE SHOULD BE HIT.”
+             Microdots involve shrinking messages to such tiny dimensions, they are made almost invisible. These also involve positioning ‘hard-to-see’ dots within a message to convey a specific message.
+
+    Digital: Involves the usage of digital mediums such as hiding information within 
+        Text files
+        Image or picture files
+        Audio files 
+        Video files
+
+Hiding information within each medium or file type involves a different technique and each technique has its own set of pros and cons and is appropriately deployed per requirement. In this article, we will look at the most popular method of hiding information within an image file using a technique called the Least Significant Bit (LSB). We will also look at an implementation of the same.
+Understanding image steganography
+
+Before diving into steganography, it is important to understand pixels and colour models. A pixel is the smallest building of an image and the colours in any pixel are (assume RGB) a function of the combination of proportions of red, green, and blue. So a pixel with a value of 0, 0, and 1 would mean 0 parts of red, 0 parts of green and 1 part of blue; in essence, this would turn out to be a blue pixel. In the case of an 8-bit system, a pixel can accommodate up to 8 digits (zeros or ones), and the largest number that could be represented in 8 digits is 11111111 which would be 255, and the smallest number that could be represented in 8 digits, would be 00000000 which would be 0. So any pixel in an 8-bit scenario could accommodate anything between 0 to 255 as a value for each of the colours. Now let’s say a random 8-bit grid has 3 pixels and each pixel having the below values for R, G, and B.

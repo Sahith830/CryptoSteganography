@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        SignUp
+    </title>
+  <!--meta tags -->
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#517df0;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+
+   
+}
+
+.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px auto 30%;
+		  cursor: pointer;
+		}
+		.button2 {background-color: #008CBA;} /* Blue */
+.p-subtitle{
+    color: #5352ed;
+    padding: 0px 6px;
+}
+
+#logo{
+    font-size: 26pt;
+    padding: 0px 10px;
+    color: #5352ed;
+
+}
+.get-started{
+  display: flex;
+  flex-direction: column;
+  margin: 20vh auto;
+  width: 500px;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  
+ 
+}
+.get-started p{
+  font-size: 30pt;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  color: #2f3542;
+   margin-top: 20px;
+   margin-bottom: 30px;
+  justify-content: center;
+}
+
+.login-p-subtitle{
+  color: #5352ed;
+}
+
+#login-logo{
+    color: #5352ed;
+    font-size: 30pt;
+
+}
+
+
+
+.login-form{
+  margin: 8px 0;
+  padding: 16px 12px;
+  width: 100%;
+  outline-style: none;
+  border: none;
+  font-family: 'Raleway';
+  font-size: 12pt;
+  font-weight: 500;
+  border: none;
+  border: solid 4px rgb(235, 235, 235);
+ 
+}
+
+.login-btn{
+  width: 350px;
+  outline-style: none;
+  border: none;
+  background-color: #5352ed;
+  font-size: 'Raleway';
+  font-weight: 700;
+  color: white;
+  font-size:18pt;
+  padding: 16px 0px;
+  margin-top: 20px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.login-form:focus{
+  border: solid 4px black;
+  transition: .2s;
+}
+
+.login-btn:active{
+  outline-style: none;
+  border: none;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href="../css/all.css">
+</head>
+<body>
+    
+    <div class="get-started" id="login-screen">
+       <p>
+                    
+                    <span class="material-icons" id="login-logo">
+                        maps_ugc
+                    </span>
+                    Sign <span class="login-p-subtitle">In</span>
+                 
+                </p>
+      
+        <form class="login-form" action="/signup" method="POST">
+        <input type="text" name="user" id="email" placeholder="Username" class="login-form">
+        <input type="text" name="name" id="email" placeholder="Name" class="login-form">
+        <input type="text" name="email" id="email" placeholder="Email" class="login-form">
+        <input type="text" name="mobile" id="password" class="login-form" placeholder="Mobile Number">
+        <input type="password" name="password" id="password" class="login-form" placeholder="Password">
+        
+        <div class="submit-container">
+            <button type="submit" class="button button2">SIGN UP</button>
+
+            <p style="font-size: smaller;">Already have an account? <a href="/login">Sign in</a></p>
+          </div>
+
+    </div>
+  
+    <script src="../js/all.js">
+
+    </script>
+
+</body>
+</html>
+</body>
+
+</html>
