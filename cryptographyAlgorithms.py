@@ -63,7 +63,8 @@ def decryption(ciphertext):
     return dtext
 
 def getFernetKey():
-    return fernetKey
+    return b'iwDNTOCqf5RDxlE0DjZ5f0B9QgdnYM5Qlgtzkp37t4s='
+
 def encryptData(userInput):
     fernet = Fernet(getFernetKey())
     token = fernet.encrypt(userInput)

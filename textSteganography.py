@@ -71,7 +71,7 @@ def encodeText(userTextFile,userInputText):
         txt_encode(text1)
     else:
         print("\nString is too big please reduce string size")
-        encodeText()
+        encodeText(userTextFile,userInputText)
 
 
 def BinaryToDecimal(binary):
