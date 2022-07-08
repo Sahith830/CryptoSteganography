@@ -84,8 +84,9 @@
 
                   <form style="width:100%;margin-left: 50%;" method=post enctype=multipart/form-data class="my-5">
                     <div class="custom-file mt-1 mb-5">
-                      <input type="file" id="myfile" class="custom-file-input" name=file>
+                      <input type="file" id="myfile" class="custom-file-input" style="margin-top: 10%;" name=file>
                       <label class="custom-file-label" for="myfile">Upload Image File</label>
+                      <textarea class="form-control" type="textarea" id="userText" placeholder="Enter the text to be Encrypted and Hidden" name="userText"></textarea>
                     </div>
                     <script>
                       document.querySelector('.custom-file-input').addEventListener('change', function (e) {
@@ -94,7 +95,7 @@
                         nextSibling.innerText = fileName
                       })
                     </script>
-                    <div class="d-flex justify-content-center ">
+                    <div class="d-flex justify-content-center " style="margin-top: 30%;">
                       <div class="btn-group">
                         <button class="btn btn-dark px-5" type=submit value=encrypt name="go">Encrypt Image</button>
                         <button class="btn btn-outline-dark px-5" type=submit value=decrypt name="go">Decrypt

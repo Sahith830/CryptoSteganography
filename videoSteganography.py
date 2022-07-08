@@ -75,8 +75,7 @@ def clean_tmp(path="./tmp"):
         shutil.rmtree(path)
         print("[INFO] tmp files are cleaned up")
 
-def encodeVideo():
-    input_string = "THIS IS A TEST"
+def encodeVideo(input_string):
     byteInputString = bytes(input_string,'utf-8')
     data = encryptData(byteInputString)
     input_string = data.decode('utf-8')

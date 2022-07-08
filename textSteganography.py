@@ -54,7 +54,7 @@ def txt_encode(text):
     print("\nStego file has successfully generated")
 
 
-def encodeText(userTextFile):
+def encodeText(userTextFile,userInputText):
     count2=0
     file1 = open(userTextFile,"r")
     for line in file1: 
@@ -64,7 +64,7 @@ def encodeText(userTextFile):
     bt=int(count2)
     print("Maximum number of words that can be inserted :- ",int(bt/6))
     # text1=input("\nEnter data to be encoded:- ")
-    text1 = "Text Secret to be encoded"
+    text1 = userInputText
     l=len(text1)
     if(l<=bt):
         print("\nInputed message can be hidden in the cover file\n")

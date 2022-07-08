@@ -2,7 +2,7 @@ import wave
 from commonUtils import STEGANOGRAPHIC_AUDIO_FILE
 from cryptographyAlgorithms import decryptData, encryptData
 
-def encodeAudio(userAudioFile):
+def encodeAudio(userAudioFile,userInputText):
     # nameoffile=input("Enter name of the file (with extension) :- ")
     song = wave.open(userAudioFile, mode='rb')
 
@@ -12,7 +12,8 @@ def encodeAudio(userAudioFile):
     frame_bytes=bytearray(frame_list)
 
     # data = input("\nEnter the secret message :- ")
-    data = b'Audio Secret Message'
+    data = bytes(userInputText,'utf-8')
+    # data = b'Audio Secret Message'
     data = encryptData(data)
     # print("Encrypted Data",data)
     data = data.decode('utf-8')

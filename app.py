@@ -97,7 +97,8 @@ def videoSteganography():
         userVideoFile = request.files['file']
         userVideoFile.save(os.path.join(app.config['UPLOAD_FOLDER'],'userVideoFile.mp4'))
         if request.form['go'] == 'encrypt' :
-            encodeVideo()
+            input_string = request.form['userText']
+            encodeVideo(input_string)
             return send_file(STEGANOGRAPHIC_VIDEO_FILE,as_attachment=True)
         if request.form['go'] == 'decrypt' :
             decodedMessage = decode_string(USER_VIDEO_FILE)
@@ -110,7 +111,8 @@ def audioSteganography():
         userAudioFile = request.files['file']
         userAudioFile.save(os.path.join(app.config['UPLOAD_FOLDER'],'userAudioFile.mp3'))
         if request.form['go'] == 'encrypt' :
-            encodeAudio(USER_AUDIO_FILE)
+            input_string = request.form['userText']
+            encodeAudio(USER_AUDIO_FILE,input_string)
             return send_file(STEGANOGRAPHIC_AUDIO_FILE,as_attachment=True)
         if request.form['go'] == 'decrypt' :
             decodedMessage = decodeAudio(USER_AUDIO_FILE)
@@ -123,7 +125,8 @@ def imageSteganography():
         userTextFile = request.files['file']
         userTextFile.save(os.path.join(app.config['UPLOAD_FOLDER'],'userImageFile.jpg'))
         if request.form['go'] == 'encrypt' :
-            encrypt(USER_IMAGE_FILE,"Image Hidden Text")
+            input_string = request.form['userText']
+            encrypt(USER_IMAGE_FILE,input_string) #make the text in this to be dynamic
             # encryptAndEncodeDataIntoImage(USER_IMAGE_FILE,"Secret To be encoded")
             return send_file(STEGANOGRAPHIC_IMAGE_BMP_FILE,as_attachment=True)
         if request.form['go'] == 'decrypt' :
@@ -135,10 +138,11 @@ def imageSteganography():
 def textSteganography():
     if request.method == 'POST':
         userTextFile = request.files['file']
-        print(request.form['userText'],request.form['userSecret'])
+        print(request.form['userText'])
         userTextFile.save(os.path.join(app.config['UPLOAD_FOLDER'],'userTextFile.txt'))
         if request.form['go'] == 'encrypt' :
-            encodeText(USER_TEXT_FILE)
+            userTextInput = request.form['userText']
+            encodeText(USER_TEXT_FILE,userTextInput)
             return send_file(STEGANOGRAPHIC_TEXT_FILE,as_attachment=True)
         if request.form['go'] == 'decrypt' :
             decodedMessage = decodeText(USER_TEXT_FILE)
